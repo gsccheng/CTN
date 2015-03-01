@@ -1,0 +1,66 @@
+/*----- Sessions -----*/
+div#login {
+  display: none;
+}
+
+#signout, #signin {
+  color: yellow;
+}
+.error {
+  color: red;
+}
+
+.default-off {
+  display: none;
+}
+
+.nav-right {
+  float: right;
+}
+
+
+
+/*----- Other -----*/
+
+#navlink-to-news-source {
+  color: #5cbde0;
+}
+
+div#loginbox {
+  display: none;
+}
+
+div#all-events, #event-help, #conspiracy-template, #my-event-template{
+  display: none;
+}
+
+div#all-articles {
+  display: none;
+}
+
+#event-name {
+  text-align: center;
+}
+
+#site-meta {
+  background-color: black;
+}
+
+#title-heading {
+  color: white ;
+}
+
+#conspiracy-box {
+  min-height: 600px;
+  min-width: 500px;
+}
+
+/*#events-table #events-form {
+  display: inline-block;
+  float: right;
+}
+
+#events-form {
+  display: inline-block;
+  float: left;
+}*/

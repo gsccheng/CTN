@@ -1,0 +1,398 @@
+<div id="page" data-id='5'>
+
+  <header id="header">
+    <nav id="site-navigation" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <h3 class="sr-only">Main menu</h3>
+      <a class="sr-only" href="#primary" title="Skip to content">Skip to content</a>
+
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+
+      <div class="collapse navbar-collapse">
+        <ul id="menu-menu-1" class="nav navbar-nav"><li id="menu-item-73" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home active menu-item-73"><a href="/">Home</a></li>
+          <!-- <li id="menu-item-98" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-98"><a href="http://demos.bavotasan.com/arcade/category/features/">Features</a></li> -->
+
+          <li id="menu-item-74" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown menu-item-74"><a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="#">My Conspiracies<b class="caret"></b></a>
+            <ul id="my-conspiracies" class="dropdown-menu">
+              <li id='my-event-template' class="menu-item menu-item-type-post_type menu-item-object-page"><a class="event-link" href="#"></a></li>
+              <% @my_conspiracies.each do |event| %>
+              <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                <a class="event-link" data-id="<%= event.id %>" href="#">
+                  <%= event.title %>
+                </a>
+              </li>
+              <% end %>
+            </ul>
+          </li>
+        <!-- </ul> -->
+      </li>
+      <li id="menu-item-74" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown menu-item-74"><a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="#">Trending News Articles<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <% @news_feed.each do |title_link| %>
+          <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="<%= title_link['link'] %>">
+            <%= title_link['title']  %></a></li>
+            <% end %>
+            <li class="link-to-news-source menu-item menu-item-type-post_type menu-item-object-page"><a id="navlink-to-news-source" href="http://www.nytimes.com/">
+              More from The New York Times</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <div class="menu navbar-right">
+        <ul id="menu-social-items" class="menu-items">
+          <li id="welcome_nav_link" class="default-off menu-item menu-item-type-custom menu-item-object-custom menu-item-76"><a href='#'id="welcome_nav">Welcome!</a></li>
+          <li id="login_link" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-76"><a id="signin" href="#">Login</a></li>
+          <li id="logout_link" class="default-off menu-item menu-item-type-custom menu-item-object-custom menu-item-76"><a id="signout" href="#">Logout</a></li>
+
+          <!-- Start Signin form -->
+          <div id="login" class="container">
+            <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+              <div class="panel panel-info" >
+                <div class="panel-heading">
+                  <div class="panel-title">Sign In</div>
+                  <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="#">Forgot password?</a></div>
+                </div>
+
+                <div style="padding-top:30px" class="panel-body" >
+                  <ul>
+
+                    <div class="error">
+                    </div>
+
+                  </ul>
+
+                  <div id="loginalert" style="display:none" id="login-alert" class="alert alert-danger col-sm-12">
+                    <p>Error:</p>
+                    <span></span></div>
+
+                    <form id="loginform" class="form-horizontal" role="form">
+
+                      <div style="margin-bottom: 25px" class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="username">
+                      </div>
+                      <div style="margin-bottom: 25px" class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                        <input id="login-password" type="password" class="form-control" name="password" placeholder="password">
+                      </div>
+
+                      <div class="input-group">
+                        <div class="checkbox">
+                          <label>
+                            <input id="login-remember" type="checkbox" name="remember" value="1"> Remember me
+                          </label>
+                        </div>
+                      </div>
+
+                      <div style="margin-top:10px" class="form-group">
+                        <!-- Button -->
+
+                        <div class="col-sm-12 controls">
+
+
+                         <!--  <a id="btn-login" href="#" class="btn btn-success">Login  </a> -->
+                         <button id="btn-login" type="submit" class="btn btn-info"><i class="icon-hand-right"></i> &nbsp Login</button>
+
+                         <a id="btn-fblogin" href="#" class="btn btn-primary">Login with Facebook</a>
+
+                       </div>
+                     </div>
+
+                     <div class="form-group">
+                      <div class="col-md-12 control">
+                        <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%" >
+                          Don't have an account!
+                          <a id="register_link" href="#">
+                            Sign Up Here
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+
+                </div>
+              </div>
+            </div>
+            <div id="signupbox" style="display:none; margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+              <div class="panel panel-info">
+                <div class="panel-heading">
+                  <div class="panel-title">Sign Up</div>
+                  <div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="signinlink" href="#" onclick="$('#signupbox').hide(); $('#loginbox').show()">Sign In</a></div>
+                </div>
+                <div class="panel-body" >
+                  <form id="signupform" class="form-horizontal" role="form">
+
+                    <div id="signupalert" style="display:none" class="alert alert-danger">
+                      <p>Error:</p>
+                      <span></span>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="Email" class="col-md-3 control-label">Email</label>
+                      <div class="col-md-9">
+                        <input type="text" class="form-control" name="email" placeholder="Email Address">
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="Username" class="col-md-3 control-label">Username</label>
+                      <div class="col-md-9">
+                        <input type="text" class="form-control" name="username" placeholder="Username">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="Password" class="col-md-3 control-label">Password</label>
+                      <div class="col-md-9">
+                        <input id="reg_pw" type="password" class="form-control" name="password" placeholder="Password">
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="Retype_password" class="col-md-3 control-label">Retype password</label>
+                      <div class="col-md-9">
+                        <input id="reg_retyped_pw" type="password" class="form-control" name="retyped_password" placeholder="Retype Password">
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <!-- Button -->
+                      <div class="col-md-offset-3 col-md-9">
+                        <button id="btn-signup" type="submit" class="btn btn-info"><i class="icon-hand-right"></i> &nbsp Sign Up</button>
+                        <span style="margin-left:8px;">or</span>
+                      </div>
+                    </div>
+
+                    <div style="border-top: 1px solid #999; padding-top:20px"  class="form-group">
+
+                      <div class="col-md-offset-3 col-md-9">
+                        <button id="btn-fbsignup" type="button" class="btn btn-primary"><i class="icon-facebook"></i>   Sign Up with Facebook</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Signin form -->
+
+<!--
+<li id="menu-item-77" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-77"><a href="http://facebook.com"><span class="sr-only">Facebook</span></a></li>
+<li id="menu-item-78" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-78"><a href="http://pinterest.com"><span class="sr-only">Pinterest</span></a></li>
+<li id="menu-item-80" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-80"><a href="http://plus.google.com/"><span class="sr-only">Google+</span></a></li>
+<li id="menu-item-79" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-79"><a href="http://dribbble.com"><span class="sr-only">Dribbble</span></a></li>
+<li id="menu-item-81" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-81"><a href="http://github.com/"><span class="sr-only">Github</span></a></li>
+<li id="menu-item-82" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-82"><a href="http://tumblr.com/"><span class="sr-only">Tumblr</span></a></li>
+<li id="menu-item-83" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-83"><a href="http://youtube.com/"><span class="sr-only">YouTube</span></a></li>
+<li id="menu-item-84" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-84"><a href="http://flickr.com/"><span class="sr-only">Flickr</span></a></li>
+<li id="menu-item-85" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-85"><a href="http://vimeo.com/"><span class="sr-only">Vimeo</span></a></li>
+<li id="menu-item-86" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-86"><a href="http://instagram.com/"><span class="sr-only">Instagram</span></a></li>
+<li id="menu-item-87" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-87"><a href="http://linkedin.com/"><span class="sr-only">LinkedIn</span></a></li>
+<li id="menu-item-88" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-88"><a href="http://bitbucket.org/"><span class="sr-only">Bitbucket</span></a></li> -->
+</ul></div>       </div>
+</nav><!-- #site-navigation -->
+
+<div class="title-card-wrapper">
+  <div class="title-card">
+    <div id="site-meta">
+      <br><br>
+      <h1 id="site-title">
+        <a href="#" title="Arcade" rel="home">CTN</a>
+        <h1 id="title-heading">Conspiracize The News</h1>
+
+      </h1>
+      <img src="/images/doge.png" alt="" />
+      <br>
+      <a href="#" id="more-site" class="btn btn-default btn-lg">Get Started!</a>
+    </div>
+    <!-- <img class="header-img" src="http://demos.bavotasan.com/arcade/wp-content/themes/arcade/library/images/header01.jpg" alt="" /> -->
+  </div>
+</div>
+
+</header>
+
+<!-- Events Form and Listings -->
+
+<br>
+<div id="all-events" >
+  <div class="col-md-6">
+    <form id="events-form" class="form-horizontal">
+      <fieldset>
+        <!-- Form Name -->
+        <legend>Create a New Event</legend>
+
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="input[title]">Event Name</label>
+          <div class="col-md-4">
+            <input id="input[title]" name="input[title]" type="text" placeholder="Event Name" class="form-control input-md" required="">
+
+          </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="input[begin_date]">Event Start Date</label>
+          <div class="col-md-4">
+            <input id="input[begin_date]" name="input[begin_date]" type="text" placeholder="yyyy-mm-dd" class="form-control input-md" required="">
+          </div>
+        </div>
+
+        <!-- Button -->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="new-event-btn"></label>
+          <div class="col-md-4">
+            <button id="new-event-btn" type="submit" name="new-event-btn" class="btn btn-primary">Submit New Event</button>
+          </div>
+        </div>
+
+      </fieldset>
+    </form>
+  </div>
+  <div class="col-md-6">
+    <legend>Recently Created Events</legend>
+    <table class="events-table table table-bordered">
+      <thead>
+        <tr><th>Event Name</th><th>Event Start Date</th></tr>
+      </thead>
+      <tbody id="event-list-body">
+        <% @last_5_events.each do |event| %>
+        <tr><td><a class="event-link" data-id='<%=event.id%>' href='#'><%= event.title %></a></td>
+          <td><%= event.begin_date %></td></tr>
+          <% end %>
+        </tbody>
+        <tr style="display:none;" id="event-template">
+          <td><a class="event-link" href='#' >here</a></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+
+  <main>  <div class="home-top">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="home-jumbotron jumbotron">
+            <h1 id="event-name">No Event Selected</h1>
+            <p id="event-help" class="lead">This event's conspiracies are below:</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <!-- end of new event div -->
+
+  <!-- ----- Beginning of articles ----- -->
+  <div id="all-articles">
+    <div class="col-md-6">
+      <form id="articles-form" class="form-horizontal">
+        <fieldset>
+
+          <!-- Form Name -->
+          <legend>Create a New Conspiracy for this Event!</legend>
+
+          <!-- Text input-->
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="input[content]">Conspiracy Description</label>
+            <div class="col-md-6">
+              <textarea name="content" rows="25" cols="50">
+              </textarea>
+              <!--   <input id="conspiracy-box" name="content" type="text" class="form-control input-md" required=""> -->
+
+            </div>
+          </div>
+
+          <!-- Button -->
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="new-event-btn"></label>
+            <div class="col-md-4">
+              <button id="new-event-btn" type="submit" name="new-event-btn" class="btn btn-primary">Submit the Conspiracy</button>
+            </div>
+          </div>
+
+        </fieldset>
+      </form>
+    </div>
+    <div class="col-md-6">
+      <legend>Recently Submitted Conspiracies</legend>
+        <ul id="conspiracy-list-template">
+        </ul>
+        <ul>
+          <li id="conspiracy-template"></li>
+        </ul>
+        <ul id="conspiracy-list">
+          <% @conspiracies.each do |conspiracy| %>
+          <li data-id="<%= conspiracy.id %>"><%= conspiracy.content %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ----- End of Articles ----- -->
+
+
+          </main><!-- main -->
+
+          <footer id="footer" role="contentinfo">
+            <div id="footer-content" class="container">
+              <!-- <div class="row">
+                <aside id="text-2" class="footer-widget col-md-4 widget_text"><h3 class="widget-title"></h3>     <div class="textwidget"><p></p>
+                </div>
+              </aside>    <aside id="recent-posts-3" class="footer-widget col-md-4 widget_recent_entries">    <h3 class="widget-title"></h3>    <ul>
+              <li>
+              </li>
+            </ul>
+          </aside><aside id="pages-2" class="footer-widget col-md-4 widget_pages"><h3 class="widget-title"></h3>   <ul>
+          <li class="page_item page-item-149"></li>
+        </ul>
+      </aside>      </div> -->
+      <!-- .row -->
+
+      <div class="row">
+        <div class="copyright col-lg-12">
+          <span class="line active"></span>
+          <span class="pull-left">Not Copyright © 2016 <a href="http://demos.bavotasan.com/arcade">CTN - Conspiracize The News</a>. No Rights Reserved.</span>
+          <span class="credit-link pull-right"><i class="fa fa-leaf"></i></span>
+        </div><!-- .col-lg-12 -->
+      </div><!-- .row -->
+    </div><!-- #footer-content.container -->
+  </footer><!-- #footer -->
+</div><!-- #page -->
+
+<script type="text/javascript">
+adroll_adv_id = "HWCZ2ZTZB5D3FPOF4LI2SM";
+adroll_pix_id = "WZZLXGRPNZHVXATZX7SY54";
+(function () {
+  var oldonload = window.onload;
+  window.onload = function(){
+   __adroll_loaded=true;
+   var scr = document.createElement("script");
+   var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+   scr.setAttribute('async', 'true');
+   scr.type = "text/javascript";
+   // scr.src = host + "/j/roundtrip.js";
+   ((document.getElementsByTagName('head') || [null])[0] ||
+    document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+   if(oldonload){oldonload()}};
+ }());
+</script>
+
+<script type='text/javascript' src='http://demos.bavotasan.com/arcade/wp-includes/js/comment-reply.min.js?ver=4.0.1'></script>
+<script type='text/javascript' src='http://demos.bavotasan.com/arcade/wp-content/themes/arcade/library/js/bootstrap.min.js?ver=3.0.3'></script>
+<script type='text/javascript' src='http://demos.bavotasan.com/arcade/wp-content/themes/arcade/library/js/fillsize.js?ver=4.0.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var theme_js_vars = {"carousel":"","autoplay":"","tooltip":"","tabs":"","arc":"400","fittext":"","maxfont":"120"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://demos.bavotasan.com/arcade/wp-content/themes/arcade/library/js/jquery.arctext.js?ver=4.0.1'></script>
+<script type='text/javascript' src='http://demos.bavotasan.com/arcade/wp-content/themes/arcade/library/js/theme.js?ver=4.0.1'></script>
+
+
+      </div>
