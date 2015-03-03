@@ -3,9 +3,10 @@ Whether true or not, many people have very entertaining stories of how the news 
 
 
 Top of the page:
-![Image:top of the page](https://raw.githubusercontent.com/gsccheng/CTN/master/public/images/example-top.png "Top of the page"
+![Image:top of the page][logo]
+[logo]: https://raw.githubusercontent.com/gsccheng/CTN/master/public/images/example-top.png "Top of the page"
 
-Submitting a conspiracy
+Submitting a conspiracy:
 ![Image:Submitting a conspiracy][logo]
 [logo]: https://raw.githubusercontent.com/gsccheng/CTN/master/public/images/example-create.png "Submitting a conspiracy"
 
