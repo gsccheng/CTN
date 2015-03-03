@@ -8,10 +8,10 @@ Whether true or not, many people have very entertaining stories of how the news 
 
 ---
 #### Submitting a conspiracy:
-![Image:Submitting a conspiracy][logo]
-[logo]: https://raw.githubusercontent.com/gsccheng/CTN/master/public/images/example-create.png "Submitting a conspiracy"
+![Image:Submitting a conspiracy][logo1]
+[logo1]: https://raw.githubusercontent.com/gsccheng/CTN/master/public/images/example-create.png "Submitting a conspiracy"
 
 ---
 #### Viewing an RSS news feed for inspiration for conspiracies:
-![Image:Viewing an RSS news feed for inspiration for conspiracies][logo]
-[logo]: https://raw.githubusercontent.com/gsccheng/CTN/master/public/images/example-feed.png "Viewing an RSS news feed for inspiration for conspiracies"
+![Image:Viewing an RSS news feed for inspiration for conspiracies][logo2]
+[logo2]: https://raw.githubusercontent.com/gsccheng/CTN/master/public/images/example-feed.png "Viewing an RSS news feed for inspiration for conspiracies"
